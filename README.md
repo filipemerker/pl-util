@@ -30,7 +30,7 @@ Create an utils library for polish data generation/validation.
 
 ### Feature requests
 
-_Generation:_
+**Generation:**
 
 - [ ] Fake PESEL Number
 - [ ] ZIP Code
@@ -54,7 +54,7 @@ _Generation:_
 - [ ] Hobby
 - [ ] Bank info
 
-_Validation:_
+**Validation:**
 
 - [ ] PESEL number
 - [ ] ZIP Code
@@ -64,6 +64,6 @@ _Validation:_
 - [ ] NIP
 - [ ] Bank info
 
-_Documentation_
+**Documentation**
 
-- [] Create website project using Github pages
+- [ ] Create website project using Github pages
