@@ -3,6 +3,7 @@
 ## Goal
 
 Improve knowledge on Tooling:
+
 - Typescript
 - Testing
   - Unit
@@ -10,7 +11,7 @@ Improve knowledge on Tooling:
   - E2E
     - Cypress
     - Plawright
-- Design PAtterns
+- Design Patterns
   - Functional programming
   - Singleton
   - Strategy
@@ -29,7 +30,8 @@ Create an utils library for polish data generation/validation.
 
 ### Feature requests
 
-*Generation:*
+**Generation:**
+
 - [ ] Fake PESEL Number
 - [ ] ZIP Code
 - [ ] City name
@@ -52,7 +54,7 @@ Create an utils library for polish data generation/validation.
 - [ ] Hobby
 - [ ] Bank info
 
-*Validation:*
+**Validation:**
 
 - [ ] PESEL number
 - [ ] ZIP Code
@@ -62,6 +64,6 @@ Create an utils library for polish data generation/validation.
 - [ ] NIP
 - [ ] Bank info
 
-*Documentation*
+**Documentation**
 
-- [] Create website project using Github pages
+- [ ] Create website project using Github pages
