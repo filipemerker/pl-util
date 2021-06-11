@@ -70,7 +70,6 @@ describe('array utils', () => {
 
     it('should return an array and return proper data when option object passed', () => {
       const items = ['bx', 'ba', 'cb', 'ax', 'ba'];
-      console.log(createGetItems(items)({ startsWith: 'b', sort: 'desc', unique: true }));
 
       expect(createGetItems(items)({ startsWith: 'b', sort: 'desc', unique: true })).toEqual([
         'bx',
