@@ -53,6 +53,8 @@ Create an utils library for polish data generation/validation.
 - [ ] Job
 - [ ] Hobby
 - [ ] Bank info
+- [ ] DNS
+- [ ] Countries
 
 **Validation:**
 
@@ -67,3 +69,7 @@ Create an utils library for polish data generation/validation.
 **Documentation**
 
 - [ ] Create website project using Github pages
+
+**Ideas**
+
+- Package logo :)
