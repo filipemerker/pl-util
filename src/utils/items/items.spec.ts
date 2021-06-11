@@ -1,4 +1,4 @@
-import { getItems, getItem } from './array';
+import { getItems, getItem, createGetItems } from './items';
 
 describe('array utils', () => {
   describe('getItems', () => {
@@ -58,6 +58,24 @@ describe('array utils', () => {
       const items = ['Białystok', 'Warszawa', 'Wrocław'];
 
       expect(getItems(items, { startsWith: 'W' })).toEqual(['Warszawa', 'Wrocław']);
+    });
+  });
+
+  describe('createGetItems', () => {
+    it('should return an array of strings if an array of string is provided as source', () => {
+      const items = ['a', 'b', ''];
+
+      expect(createGetItems(items)().every((item) => typeof item === 'string')).toBe(true);
+    });
+
+    it('should return an array and return proper data when option object passed', () => {
+      const items = ['bx', 'ba', 'cb', 'ax', 'ba'];
+      console.log(createGetItems(items)({ startsWith: 'b', sort: 'desc', unique: true }));
+
+      expect(createGetItems(items)({ startsWith: 'b', sort: 'desc', unique: true })).toEqual([
+        'bx',
+        'ba',
+      ]);
     });
   });
 

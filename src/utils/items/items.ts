@@ -1,4 +1,4 @@
-import { Items, Options } from '../types';
+import { Items, Options } from '../../types';
 
 const defaultOptions = {
   includes: '',
@@ -23,7 +23,7 @@ export const getItems = (items: Items, options: Options = defaultOptions): Items
   }
 
   if (unique) {
-    itemsArr = [...new Set(items)];
+    itemsArr = [...new Set(itemsArr)];
   }
 
   if (length > 0 && typeof length === 'number' && Number.isInteger(length)) {
