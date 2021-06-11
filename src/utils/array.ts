@@ -1,12 +1,44 @@
-import { Items } from '../types'
+import { Items, Options } from '../types';
 
-export const getItems = (items: Items, options?: any): Items => {
-  return items
-}
+const defaultOptions = {
+  includes: '',
+  length: 10,
+  unique: false,
+  startsWith: '',
+};
 
-export const createGetItems = (items: Items) => (options: any) => getItems(items, options)
+export const getItem = (items: Items, options?: Options) => getItems(items, options)[0];
 
+export const getItems = (items: Items, options: Options = defaultOptions): Items => {
+  const { includes, length, unique, sort, startsWith } = options;
 
+  let itemsArr = [...items];
 
+  if (startsWith) {
+    itemsArr = itemsArr.filter((item) => item.startsWith(startsWith));
+  }
 
+  if (includes) {
+    itemsArr = itemsArr.filter((item) => item.includes(includes));
+  }
 
+  if (unique) {
+    itemsArr = [...new Set(items)];
+  }
+
+  if (length > 0 && typeof length === 'number' && Number.isInteger(length)) {
+    itemsArr = itemsArr.slice(0, length);
+  }
+
+  if (sort === 'asc') {
+    itemsArr = itemsArr.sort();
+  }
+
+  if (sort === 'desc') {
+    itemsArr = itemsArr.sort((a, b) => (a > b ? -1 : 1));
+  }
+
+  return itemsArr;
+};
+
+export const createGetItems = (items: Items) => (options?: Options) => getItems(items, options);
