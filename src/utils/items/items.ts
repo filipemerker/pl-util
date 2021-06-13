@@ -1,4 +1,4 @@
-import { Items, Options } from '../../types';
+import { Items, ItemOptions, ItemsOptions } from '../../types';
 
 const defaultOptions = {
   includes: '',
@@ -7,9 +7,9 @@ const defaultOptions = {
   startsWith: '',
 };
 
-export const getItem = (items: Items, options?: Options) => getItems(items, options)[0];
+export const getItem = (items: Items, options?: ItemOptions) => getItems(items, options)[0];
 
-export const getItems = (items: Items, options?: Options): Items => {
+export const getItems = (items: Items, options?: ItemsOptions): Items => {
   const { includes, length, unique, sort, startsWith } = { ...defaultOptions, ...options };
 
   let itemsArr = [...items];
@@ -41,4 +41,5 @@ export const getItems = (items: Items, options?: Options): Items => {
   return itemsArr;
 };
 
-export const createGetItems = (items: Items) => (options?: Options) => getItems(items, options);
+export const createGetItems = (items: Items) => (options?: ItemsOptions) =>
+  getItems(items, options);
