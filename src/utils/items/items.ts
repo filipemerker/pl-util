@@ -1,4 +1,4 @@
-import { Items, ItemOptions, ItemsOptions } from '../../types';
+import { Item, Items, ItemOptions, ItemsOptions } from '../../types';
 
 const defaultOptions = {
   includes: '',
@@ -7,8 +7,18 @@ const defaultOptions = {
   startsWith: '',
 };
 
-export const getItem = (items: Items, options?: ItemOptions) => getItems(items, options)[0];
+/**
+ * getItem - Get item element
+ * @param {ItemOptions} options options object
+ * @return {Item}
+ */
+export const getItem = (items: Items, options?: ItemOptions): Item => getItems(items, options)[0];
 
+/**
+ * getItems - Get, filter and return array of items
+ * @param {ItemsOptions} options options object
+ * @return {Items}
+ */
 export const getItems = (items: Items, options?: ItemsOptions): Items => {
   const { includes, length, unique, sort, startsWith } = { ...defaultOptions, ...options };
 
@@ -41,5 +51,12 @@ export const getItems = (items: Items, options?: ItemsOptions): Items => {
   return itemsArr;
 };
 
-export const createGetItems = (items: Items) => (options?: ItemsOptions) =>
-  getItems(items, options);
+/**
+ * createGetItems - function to generate array of items with options
+ * @param {ItemsOptions} options options object
+ * @return {Items}
+ */
+export const createGetItems =
+  (items: Items) =>
+  (options?: ItemsOptions): Items =>
+    getItems(items, options);
