@@ -3,18 +3,15 @@ import { getItems, getItem, createGetItems } from './items';
 describe('array utils', () => {
   describe('getItems', () => {
     it('should return an array of strings if an array of string is provided as source', () => {
-      const items = ['', '', ''];
+      const items = ['a', 'b', ''];
 
       expect(getItems(items).every((item) => typeof item === 'string')).toBe(true);
     });
 
     it('should return proper items with option includes', () => {
-      const items = ['Białystok', 'Tomaszów Mazowiecki', 'Grodzisk Mazowiecki', 'Warszawa'];
+      const items = ['abc', 'ab', 'abcd', 'a'];
 
-      expect(getItems(items, { includes: 'Mazowiecki' })).toEqual([
-        'Tomaszów Mazowiecki',
-        'Grodzisk Mazowiecki',
-      ]);
+      expect(getItems(items, { includes: 'abc' })).toEqual(['abc', 'abcd']);
     });
 
     it('should return 10 items from the array if no options are passed', () => {
@@ -55,9 +52,9 @@ describe('array utils', () => {
     });
 
     it('should return proper items with option startWith', () => {
-      const items = ['Białystok', 'Warszawa', 'Wrocław'];
+      const items = ['Abc', 'Bcc', 'Aaa', 'Ca'];
 
-      expect(getItems(items, { startsWith: 'W' })).toEqual(['Warszawa', 'Wrocław']);
+      expect(getItems(items, { startsWith: 'A' })).toEqual(['Abc', 'Aaa']);
     });
   });
 
@@ -80,7 +77,7 @@ describe('array utils', () => {
 
   describe('getItem', () => {
     it('should return string item', () => {
-      const items = ['', '', ''];
+      const items = ['a', 'b', 'c'];
 
       expect(typeof getItem(items)).toBe('string');
     });
