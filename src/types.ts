@@ -6,6 +6,7 @@ export interface ItemsOptions {
   includes?: string;
   length?: number;
   unique?: boolean;
+  shuffle?: boolean;
   sort?: '' | 'asc' | 'desc';
   startsWith?: string;
 }
