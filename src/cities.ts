@@ -8,19 +8,15 @@ import CITIES from './data/cities.json';
  * @param {ItemOptions} options options object
  * @return {string}
  */
-export function getCity(options?: ItemOptions) {
-  const cities = shuffle(CITIES);
-
-  return getItem(cities, options);
-}
+export const getCity = (options?: ItemOptions) => getItem(CITIES, options);
 
 /**
  * getCities - generate array of random polish cities
  * @param {ItemsOptions} options options object
  * @return {string[]}
  */
-export function getCities(options?: ItemsOptions) {
+export const getCities = (options?: ItemsOptions) => {
   const cities = shuffle(CITIES);
 
   return createGetItems(cities)(options);
-}
+};

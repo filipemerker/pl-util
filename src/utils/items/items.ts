@@ -1,4 +1,5 @@
 import { Item, Items, ItemOptions, ItemsOptions } from '../../types';
+import { getRandomBetween } from '../random';
 
 const defaultOptions = {
   includes: '',
@@ -12,7 +13,12 @@ const defaultOptions = {
  * @param {ItemOptions} options options object
  * @return {Item}
  */
-export const getItem = (items: Items, options?: ItemOptions): Item => getItems(items, options)[0];
+export const getItem = (items: Items, options?: ItemOptions): Item => {
+  const parsedItems = getItems(items, options);
+  const random = getRandomBetween(0, parsedItems.length - 1);
+
+  return items[random];
+};
 
 /**
  * getItems - Get, filter and return array of items
@@ -24,12 +30,13 @@ export const getItems = (items: Items, options?: ItemsOptions): Items => {
 
   let itemsArr = [...items];
 
-  if (startsWith) {
-    itemsArr = itemsArr.filter((item) => item.startsWith(startsWith));
-  }
+  if (startsWith || includes) {
+    itemsArr = itemsArr.filter((item) => {
+      const isStartsWith = startsWith ? item.startsWith(startsWith) : true;
+      const isIncludes = includes ? item.includes(includes) : true;
 
-  if (includes) {
-    itemsArr = itemsArr.filter((item) => item.includes(includes));
+      return isStartsWith && isIncludes;
+    });
   }
 
   if (unique) {

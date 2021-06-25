@@ -1,4 +1,2 @@
-import { createGetItems, getItem, getItems } from './items/items';
-import { shuffle } from './shuffle';
-
-export { createGetItems, getItem, getItems, shuffle };
+export { createGetItems, getItem, getItems } from './items/items';
+export { shuffle } from './shuffle';
