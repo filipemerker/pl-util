@@ -37,6 +37,11 @@ describe('test cities.js', () => {
       expect(cities.length).toBeGreaterThan(0);
     });
 
+    it('should return array of random cities', () => {
+      const arr = [...new Array(8)].map(() => getCities());
+      arr.forEach((cities, index) => expect(cities).not.toEqual(arr[index + 1]));
+    });
+
     it('should return cities from cities list', () => {
       expect(cities.every((city) => CITIES.indexOf(city) >= 0)).toBeTruthy();
     });

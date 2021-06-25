@@ -1,5 +1,6 @@
 import { Item, Items, ItemOptions, ItemsOptions } from '../../types';
 import { getRandomBetween } from '../random';
+import { shuffleArray } from '../shuffle';
 
 const defaultOptions = {
   includes: '',
@@ -26,7 +27,14 @@ export const getItem = (items: Items, options?: ItemOptions): Item => {
  * @return {Items}
  */
 export const getItems = (items: Items, options?: ItemsOptions): Items => {
-  const { includes, length, unique, sort, startsWith } = { ...defaultOptions, ...options };
+  const {
+    includes,
+    length,
+    unique,
+    sort,
+    startsWith,
+    shuffle = false,
+  } = { ...defaultOptions, ...options };
 
   let itemsArr = [...items];
 
@@ -41,6 +49,10 @@ export const getItems = (items: Items, options?: ItemsOptions): Items => {
 
   if (unique) {
     itemsArr = [...new Set(itemsArr)];
+  }
+
+  if (shuffle) {
+    itemsArr = shuffleArray(itemsArr);
   }
 
   if (length && length > 0 && typeof length === 'number' && Number.isInteger(length)) {
