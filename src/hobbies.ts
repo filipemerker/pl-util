@@ -1,4 +1,4 @@
-import { createGetItems, getItem } from './utils';
+import { getItems, getItem } from './utils';
 import { ItemOptions, ItemsOptions } from './types';
 
 import HOBBIES from './data/hobby.json';
@@ -18,5 +18,5 @@ export const getHobby = (options?: ItemOptions) => getItem(HOBBIES, options);
 export const getHobbies = (options?: ItemsOptions) => {
   const optionsWithShuffle = { ...options, shuffle: true };
 
-  return createGetItems(HOBBIES)(optionsWithShuffle);
+  return getItems(HOBBIES)(optionsWithShuffle);
 };

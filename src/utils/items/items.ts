@@ -15,18 +15,18 @@ const defaultOptions = {
  * @return {Item}
  */
 export const getItem = (items: Items, options?: ItemOptions): Item => {
-  const parsedItems = getItems(items, options);
+  const parsedItems = getSelectedItems(items, options);
   const random = getRandomBetween(0, parsedItems.length - 1);
 
   return items[random];
 };
 
 /**
- * getItems - Get, filter and return array of items
+ * getSelectedItems - Get, filter and return array of items
  * @param {ItemsOptions} options options object
  * @return {Items}
  */
-export const getItems = (items: Items, options?: ItemsOptions): Items => {
+export const getSelectedItems = (items: Items, options?: ItemsOptions): Items => {
   const {
     includes,
     length,
@@ -71,11 +71,11 @@ export const getItems = (items: Items, options?: ItemsOptions): Items => {
 };
 
 /**
- * createGetItems - function to generate array of items with options
+ * getItems - function to generate array of items with options
  * @param {ItemsOptions} options options object
  * @return {Items}
  */
-export const createGetItems =
+export const getItems =
   (items: Items) =>
   (options?: ItemsOptions): Items =>
-    getItems(items, options);
+    getSelectedItems(items, options);
