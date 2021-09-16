@@ -9,7 +9,7 @@ describe('test hobbies.js', () => {
       hobby = getHobby();
     });
 
-    it('should return not empty string string', () => {
+    it('should return not empty string', () => {
       expect(typeof hobby === 'string').toBeTruthy();
       expect(hobby.length).toBeGreaterThan(0);
     });

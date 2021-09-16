@@ -9,7 +9,7 @@ describe('test cities.js', () => {
       city = getCity();
     });
 
-    it('should return not empty string string', () => {
+    it('should return not empty string', () => {
       expect(typeof city === 'string').toBeTruthy();
       expect(city.length).toBeGreaterThan(0);
     });
