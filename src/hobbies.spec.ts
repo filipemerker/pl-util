@@ -1,7 +1,7 @@
 import { getHobby, getHobbies } from './hobbies';
 import HOBBIES from './data/hobby.json';
 
-describe('test hobbies.js', () => {
+describe('test hobbies.ts', () => {
   describe('test getHobby function', () => {
     let hobby = '';
 

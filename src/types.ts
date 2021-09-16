@@ -12,3 +12,5 @@ export interface ItemsOptions {
 }
 
 export type ItemOptions = Omit<ItemsOptions, 'length' | 'unique' | 'sort'>;
+
+export type Pesel = string;

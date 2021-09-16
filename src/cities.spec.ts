@@ -1,7 +1,7 @@
 import { getCity, getCities } from './cities';
 import CITIES from './data/cities.json';
 
-describe('test cities.js', () => {
+describe('test cities.ts', () => {
   describe('test getCity function', () => {
     let city = '';
 
