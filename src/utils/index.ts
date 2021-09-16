@@ -1,2 +1,2 @@
-export { createGetItems, getItem, getItems } from './items/items';
-export { shuffle } from './shuffle';
+export { getItems, getItem, getSelectedItems } from './items/items';
+export { shuffleArray } from './shuffle';

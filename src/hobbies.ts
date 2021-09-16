@@ -1,22 +1,22 @@
 import { getItems, getItem } from './utils';
 import { ItemOptions, ItemsOptions } from './types';
 
-import CITIES from './data/cities.json';
+import HOBBIES from './data/hobby.json';
 
 /**
- * getCity - generate one random polish city
+ * getHobby - generate one random hobby
  * @param {ItemOptions} options options object
  * @return {string}
  */
-export const getCity = (options?: ItemOptions) => getItem(CITIES, options);
+export const getHobby = (options?: ItemOptions) => getItem(HOBBIES, options);
 
 /**
- * getCities - generate array of random polish cities
+ * getHobbies - generate array of hobbies
  * @param {ItemsOptions} options options object
  * @return {string[]}
  */
-export const getCities = (options?: ItemsOptions) => {
+export const getHobbies = (options?: ItemsOptions) => {
   const optionsWithShuffle = { ...options, shuffle: true };
 
-  return getItems(CITIES)(optionsWithShuffle);
+  return getItems(HOBBIES)(optionsWithShuffle);
 };
