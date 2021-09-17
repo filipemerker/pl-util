@@ -1,5 +1,5 @@
 import { Item, Items, ItemOptions, ItemsOptions } from '../../types';
-import { getRandomBetween } from '../random';
+import { getRandomBetween } from '../';
 import { shuffleArray } from '../shuffle';
 
 const defaultOptions = {

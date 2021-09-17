@@ -1,6 +1,5 @@
 import { Pesel } from './types';
-import { getRandomBetween } from './utils/random';
-import { withZeroStringNumber } from './utils';
+import { getRandomBetween, withZeroStringNumber } from './utils';
 
 /**
  * getPesel - generate one random pesel number
