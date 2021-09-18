@@ -19,9 +19,9 @@ describe('test cities.ts', () => {
     });
 
     it('should options works when are passed', () => {
-      city = getCity({ startsWith: 'W', includes: 'ł' });
+      city = getCity({ startsWith: 'W' });
 
-      expect(city[0] === 'W' && city.indexOf('ł') >= 0);
+      expect(city[0] === 'W');
     });
   });
 
@@ -47,9 +47,9 @@ describe('test cities.ts', () => {
     });
 
     it('should options works when are passed', () => {
-      cities = getCities({ startsWith: 'W', includes: 'ł', length: 3, sort: 'desc', unique: true });
+      cities = getCities({ startsWith: 'W', length: 3, sort: 'desc', unique: true });
 
-      expect(cities.every((city) => city[0] === 'W' && city.indexOf('ł') >= 0)).toBeTruthy(); // startsWith && includes
+      expect(cities.every((city) => city[0] === 'W')).toBeTruthy(); // startsWith
       expect(cities.length).toBe(3); // length
       expect([...cities].sort().reverse()).toEqual(cities); // sort
       expect([...new Set(cities)].length).toBe(3); // unique

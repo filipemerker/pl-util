@@ -8,12 +8,6 @@ describe('array utils', () => {
       expect(getSelectedItems(items).every((item) => typeof item === 'string')).toBe(true);
     });
 
-    it('should return proper items with option includes', () => {
-      const items = ['abc', 'ab', 'abcd', 'a'];
-
-      expect(getSelectedItems(items, { includes: 'abc' })).toEqual(['abc', 'abcd']);
-    });
-
     it('should return 10 items from the array if no options are passed', () => {
       const items = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'];
 

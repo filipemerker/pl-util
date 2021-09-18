@@ -3,7 +3,6 @@ import { getRandomBetween } from '../';
 import { shuffleArray } from '../shuffle';
 
 const defaultOptions = {
-  includes: '',
   length: 10,
   unique: false,
   startsWith: '',
@@ -27,23 +26,15 @@ export const getItem = (items: Items, options?: ItemOptions): Item => {
  * @return {Items}
  */
 export const getSelectedItems = (items: Items, options?: ItemsOptions): Items => {
-  const {
-    includes,
-    length,
-    unique,
-    sort,
-    startsWith,
-    shuffle = false,
-  } = { ...defaultOptions, ...options };
+  const { length, unique, sort, startsWith, shuffle = false } = { ...defaultOptions, ...options };
 
   let itemsArr = [...items];
 
-  if (startsWith || includes) {
+  if (startsWith) {
     itemsArr = itemsArr.filter((item) => {
       const isStartsWith = startsWith ? item.startsWith(startsWith) : true;
-      const isIncludes = includes ? item.includes(includes) : true;
 
-      return isStartsWith && isIncludes;
+      return isStartsWith;
     });
   }
 

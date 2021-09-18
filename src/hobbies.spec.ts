@@ -19,9 +19,9 @@ describe('test hobbies.ts', () => {
     });
 
     it('should options works when are passed', () => {
-      hobby = getHobby({ startsWith: 'A', includes: 'ł' });
+      hobby = getHobby({ startsWith: 'A' });
 
-      expect(hobby[0] === 'A' && hobby.indexOf('ł') >= 0);
+      expect(hobby[0] === 'A');
     });
   });
 
@@ -49,13 +49,12 @@ describe('test hobbies.ts', () => {
     it('should options works when are passed', () => {
       hobbies = getHobbies({
         startsWith: 'A',
-        includes: 'ł',
         length: 1,
         sort: 'desc',
         unique: true,
       });
 
-      expect(hobbies.every((hobby) => hobby[0] === 'A' && hobby.indexOf('ł') >= 0)).toBeTruthy(); // startsWith && includes
+      expect(hobbies.every((hobby) => hobby[0] === 'A')).toBeTruthy(); // startsWith
       expect(hobbies.length).toBe(1); // length
       expect([...hobbies].sort().reverse()).toEqual(hobbies); // sort
       expect([...new Set(hobbies)].length).toBe(1); // unique
