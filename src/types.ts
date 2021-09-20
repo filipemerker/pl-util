@@ -1,3 +1,5 @@
+export type Gender = 'man' | 'woman';
+
 export type Item = string;
 
 export type Items = Item[];
