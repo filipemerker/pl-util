@@ -32,12 +32,12 @@ Create an utils library for polish data generation/validation.
 
 **Generation:**
 
-- [ ] Fake PESEL Number
-- [ ] ZIP Code
-- [ ] City name
-- [ ] Street name
+- [x] Fake PESEL Number
+- [x] ZIP Code
+- [x] City name
+- [x] Street name
 - [ ] Street address
-- [ ] Phone number
+- [x] Phone number
 - [ ] Voivodeship
 - [ ] Powiat
 - [ ] Gmina
@@ -46,14 +46,13 @@ Create an utils library for polish data generation/validation.
 - [ ] Person first name
 - [ ] Person second name
 - [ ] Person full name
-- [ ] PESEL
+- [x] PESEL
 - [ ] Currency
 - [ ] NIP
 - [ ] Polish ipsum?
 - [ ] Job
-- [ ] Hobby
+- [x] Hobby
 - [ ] Bank info
-- [ ] DNS
 - [ ] Countries
 
 **Validation:**
