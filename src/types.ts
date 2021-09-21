@@ -1,3 +1,5 @@
+export type Currency = 'PLN' | 'zł';
+
 export type Gender = 'man' | 'woman';
 
 export type Item = string;
