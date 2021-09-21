@@ -36,16 +36,16 @@ Create an utils library for polish data generation/validation.
 - [x] ZIP Code
 - [x] City name
 - [x] Street name
-- [ ] Street address
+- [x] Address
 - [x] Phone number
 - [ ] Voivodeship
 - [ ] Powiat
 - [ ] Gmina
 - [ ] Latitude
 - [ ] Longitude
-- [ ] Person first name
-- [ ] Person second name
-- [ ] Person full name
+- [x] Person first name
+- [x] Person second name
+- [x] Person full name
 - [x] PESEL
 - [ ] Currency
 - [ ] NIP

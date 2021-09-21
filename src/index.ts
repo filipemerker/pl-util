@@ -1,0 +1,10 @@
+export { getAddress } from './address';
+export { getApartmentNumber } from './apartmentNumber';
+export { getCities, getCity } from './cities';
+export { getHobbies, getHobby } from './hobbies';
+export { getPersonFullName, getPersonName, getPersonSurname } from './personName';
+export { getPesel } from './pesel';
+export { getPhoneNumber } from './phoneNumber';
+export { getStreetNumber } from './streetNumber';
+export { getStreet, getStreets } from './streets';
+export { getZipCode } from './zipCode';

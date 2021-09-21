@@ -74,7 +74,6 @@ describe('test person fullname', () => {
 
   it('should return proper man fullname', () => {
     const [name, surname] = personFullname.split(' ');
-    console.log(name, MALE_NAMES.indexOf(name));
     expect(MALE_NAMES.indexOf(name)).toBeGreaterThan(-1);
     expect(MALE_SURNAMES.indexOf(surname)).toBeGreaterThan(-1);
 
