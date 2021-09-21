@@ -2,6 +2,7 @@ export { getAddress } from './address';
 export { getApartmentNumber } from './apartmentNumber';
 export { getCities, getCity } from './cities';
 export { getHobbies, getHobby } from './hobbies';
+export { getMoney } from './money';
 export { getPersonFullName, getPersonName, getPersonSurname } from './personName';
 export { getPesel } from './pesel';
 export { getPhoneNumber } from './phoneNumber';

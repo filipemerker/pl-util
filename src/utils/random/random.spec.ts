@@ -1,4 +1,4 @@
-import { getFloatRandomBetween, getRandomBetween } from './getRandomBetween';
+import { getFloatRandomBetween, getRandomBetween } from './random';
 
 describe('test getRandomBetween', () => {
   it('should return value from proper range', () => {

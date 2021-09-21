@@ -47,7 +47,7 @@ Create an utils library for polish data generation/validation.
 - [x] Person second name
 - [x] Person full name
 - [x] PESEL
-- [ ] Currency
+- [x] Currency
 - [ ] NIP
 - [ ] Polish ipsum?
 - [ ] Job
