@@ -1,5 +1,7 @@
 import { getZipCode } from './zipCode';
 
+export const checkZipCodeFormat = (zipCode: string) => /^\d{2}-\d{3}$/.test(zipCode);
+
 describe('test zipCode.ts', () => {
   let zipCode: string;
 
@@ -13,13 +15,13 @@ describe('test zipCode.ts', () => {
   });
 
   it('shold have proper format dd-ddd', () => {
-    expect(/^\d{2}-\d{3}$/.test(zipCode)).toBeTruthy();
+    expect(checkZipCodeFormat(zipCode)).toBeTruthy();
   });
 
   it('should return random zip codes', () => {
     const zipCodes = [...new Array(10)].map(getZipCode);
-    const zipCodesWithoutDulications = [...new Set(zipCodes)];
+    const zipCodesWithoutDuplications = [...new Set(zipCodes)];
 
-    expect(zipCodesWithoutDulications.length).toBeGreaterThan(1);
+    expect(zipCodesWithoutDuplications.length).toBeGreaterThan(1);
   });
 });

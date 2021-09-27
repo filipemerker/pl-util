@@ -11,7 +11,7 @@ describe('test streets.ts', () => {
 
     it('should return not empty string', () => {
       expect(typeof street === 'string').toBeTruthy();
-      expect(street.length).toBeGreaterThan(0);
+      expect(street.trim().length).toBeGreaterThan(0);
     });
 
     it('should return street from streets list', () => {

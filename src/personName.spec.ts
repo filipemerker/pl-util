@@ -15,7 +15,7 @@ describe('test person name', () => {
 
   it('should return string and value', () => {
     expect(typeof personName).toBe('string');
-    expect(personName.length).toBeGreaterThan(1);
+    expect(personName.trim().length).toBeGreaterThan(1);
   });
 
   it('should return proper man name', () => {
@@ -42,7 +42,7 @@ describe('test person surname', () => {
 
   it('should return string and value', () => {
     expect(typeof personSurname).toBe('string');
-    expect(personSurname.length).toBeGreaterThan(1);
+    expect(personSurname.trim().length).toBeGreaterThan(1);
   });
 
   it('should return proper man surname', () => {
@@ -69,7 +69,7 @@ describe('test person fullname', () => {
 
   it('should return string and value', () => {
     expect(typeof personFullname).toBe('string');
-    expect(personFullname.length).toBeGreaterThan(1);
+    expect(personFullname.trim().length).toBeGreaterThan(1);
   });
 
   it('should return proper man fullname', () => {

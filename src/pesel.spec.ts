@@ -10,7 +10,7 @@ describe('test pesel.ts', () => {
 
   it('should be string and have 11 digits', () => {
     expect(typeof pesel).toBe('string');
-    expect(pesel.length).toBe(11);
+    expect(pesel.trim().length).toBe(11);
   });
 
   it('should return only digits', () => {
@@ -19,8 +19,8 @@ describe('test pesel.ts', () => {
 
   it('should return random pesels', () => {
     const pesels = [...new Array(10)].map(getPesel);
-    const peselsWithoutDulications = [...new Set(pesels)];
+    const peselsWithoutDuplications = [...new Set(pesels)];
 
-    expect(peselsWithoutDulications.length).toBeGreaterThan(1);
+    expect(peselsWithoutDuplications.length).toBeGreaterThan(1);
   });
 });

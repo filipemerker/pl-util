@@ -9,7 +9,7 @@ describe('test phoneNumber.ts', () => {
 
   it('phone number should return string value and have 13 characters (+,prefix,space,number)', () => {
     expect(typeof phoneNumber).toBe('string');
-    expect(phoneNumber.length).toBe(13);
+    expect(phoneNumber.trim().length).toBe(13);
   });
 
   it('phone number should have polish prefix', () => {
@@ -22,8 +22,8 @@ describe('test phoneNumber.ts', () => {
 
   it('phone number function should generate random numbers', () => {
     const phoneNumbersArr = [...new Array(10)].map(getPhoneNumber);
-    const phoneNumbersArrWithoutDulications = [...new Set(phoneNumbersArr)];
+    const phoneNumbersArrWithoutDuplications = [...new Set(phoneNumbersArr)];
 
-    expect(phoneNumbersArrWithoutDulications.length).toBeGreaterThan(1);
+    expect(phoneNumbersArrWithoutDuplications.length).toBeGreaterThan(1);
   });
 });
