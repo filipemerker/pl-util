@@ -1,7 +1,8 @@
 import { getAddress } from './address';
-import { checkZipCodeFormat } from './zipCode.spec';
 
-import CITIES from './data/cities.json';
+jest.mock('./utils/random/random.ts', () => ({
+  getRandomBetween: () => 1,
+}));
 
 describe('test adress.ts', () => {
   let address: string;
@@ -24,11 +25,12 @@ describe('test adress.ts', () => {
     expect(streetAndNumberName.indexOf('ul. ')).toBe(0);
   });
 
-  it('should have proper format in second address line (zip code and city)', () => {
-    const [, lineZipAndCity] = address.split('\n');
-    const [zipCode, city] = lineZipAndCity.split(' ');
+  it('should match address snapshot', () => {
+    address = getAddress();
 
-    expect(checkZipCodeFormat(zipCode)).toBeTruthy();
-    expect(CITIES.indexOf(city)).toBeGreaterThanOrEqual(0);
+    expect(address).toMatchInlineSnapshot(`
+      "ul. \\"Solidarności\\" 1 / 1
+      01-001 Aleksandrów Łódzki"
+    `);
   });
 });
