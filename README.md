@@ -41,8 +41,8 @@ Create an utils library for polish data generation/validation.
 - [ ] Voivodeship
 - [ ] Powiat
 - [ ] Gmina
-- [ ] Latitude
-- [ ] Longitude
+- [x] Latitude
+- [x] Longitude
 - [x] Person first name
 - [x] Person second name
 - [x] Person full name
