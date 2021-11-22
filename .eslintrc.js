@@ -8,6 +8,7 @@ module.exports = {
     sourceType: 'module', // Allows for the use of imports
   },
   rules: {
+    'no-console': 'warn',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
 };
